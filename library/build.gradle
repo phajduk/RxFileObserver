@@ -1,0 +1,51 @@
+/*
+ * Copyright (C) 2015 Pawel Hajduk
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0 rc3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+}
+
+
+dependencies {
+    compile 'io.reactivex:rxjava:1.0.14'
+//    androidTestCompile 'junit:junit-dep:4.11'
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+//    androidTestCompile 'com.android.support.test:runner:0.3'
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+    androidTestCompile 'org.assertj:assertj-core:1.7.1'
+}
