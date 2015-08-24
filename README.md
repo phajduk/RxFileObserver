@@ -8,13 +8,51 @@ Reactive wrapper around Android's [FileObserver][1]
 Gradle:
 TBD
 
-``` groovy
+```groovy
 TBD
 ```
 
 ## Example
-TBD
+Subscribe to any file system changes performed in external storage directory:
 
+```java
+File sdCard = Environment.getExternalStorageDirectory();
+Observable<FileEvent> sdCardFileEvents = RxFileObserver.create(sdCard);
+sdCardFileEvents.subscribe(new Action1<FileEvent>() {
+    @Override
+    public void call(FileEvent fileEvent) {
+        Log.i(TAG, fileEvent.toString());
+    }
+});
+````
+
+## Documentation
+Emitted `FileEvent` contains:
+```java
+EnumSet<FileEventType> eventTypeEnumSet;
+String path;
+```
+- `path` it's just path of changed/removed/created file
+- `eventTypeEnumSet` gives you information about flags
+
+### Flags
+```java
+public enum FileEventType {
+    ACCESS, // Data was read from a file
+    MODIFY, // Data was written to a file
+    ATTRIB, // Metadata (permissions, owner, timestamp) was changed explicitly
+    CLOSE_WRITE, // Someone had a file or directory open for writing, and closed it
+    CLOSE_NOWRITE, // Someone had a file or directory open read-only, and closed it
+    OPEN, // A file or directory was opened
+    MOVED_FROM, // A file or subdirectory was moved from the monitored directory
+    MOVED_TO, // A file or subdirectory was moved to the monitored directory
+    CREATE, // A new file or subdirectory was created under the monitored directory
+    DELETE, // A file was deleted from the monitored directory
+    DELETE_SELF, // The monitored file or directory was deleted; monitoring effectively stops
+    MOVE_SELF; // The monitored file or directory was moved; monitoring continues
+    (...)
+}
+```
 # License
 
 

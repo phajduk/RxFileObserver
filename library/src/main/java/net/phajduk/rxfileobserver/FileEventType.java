@@ -23,7 +23,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum FileEventType {
-    ACCESS, MODIFY, ATTRIB, CLOSE_WRITE, CLOSE_NOWRITE, OPEN, MOVED_FROM, MOVED_TO, CREATE, DELETE, DELETE_SELF, MOVE_SELF;
+    ACCESS, // Data was read from a file
+    MODIFY, // Data was written to a file
+    ATTRIB, // Metadata (permissions, owner, timestamp) was changed explicitly
+    CLOSE_WRITE, // Someone had a file or directory open for writing, and closed it
+    CLOSE_NOWRITE, // Someone had a file or directory open read-only, and closed it
+    OPEN, // A file or directory was opened
+    MOVED_FROM, // A file or subdirectory was moved from the monitored directory
+    MOVED_TO, // A file or subdirectory was moved to the monitored directory
+    CREATE, // A new file or subdirectory was created under the monitored directory
+    DELETE, // A file was deleted from the monitored directory
+    DELETE_SELF, // The monitored file or directory was deleted; monitoring effectively stops
+    MOVE_SELF; // The monitored file or directory was moved; monitoring continues
+
     private static final HashMap<Integer, FileEventType> fileObserverMap = new HashMap<>();
 
     static {
