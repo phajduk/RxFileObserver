@@ -18,11 +18,11 @@ apply plugin: 'com.android.library'
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'RxFileObserver'
+    bintrayName = 'rxfileobserver'
 
-    publishedGroupId = 'com.github.phajduk  '
-    libraryName = 'RxFileObserver'
-    artifact = 'RxFileObserver'
+    publishedGroupId = 'com.github.phajduk'
+    libraryName = 'rxfileobserver'
+    artifact = 'rxfileobserver'
 
     libraryDescription = 'Simple reactive API for Android\'s FileObserver class'
 
@@ -64,14 +64,11 @@ android {
     }
 }
 
-
 dependencies {
     compile 'io.reactivex:rxjava:1.0.14'
-//    androidTestCompile 'junit:junit-dep:4.11'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
-//    androidTestCompile 'com.android.support.test:runner:0.3'
-//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
     androidTestCompile 'org.assertj:assertj-core:1.7.1'
+//    androidTestCompile 'junit:junit-dep:4.11'
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'

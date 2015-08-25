@@ -14,6 +14,6 @@
   ~ limitations under the License.
   -->
 
-<resources>
-    <string name="app_name">Library</string>
-</resources>
+<manifest package="com.github.phajduk.rxfileobserver">
+    <application/>
+</manifest>

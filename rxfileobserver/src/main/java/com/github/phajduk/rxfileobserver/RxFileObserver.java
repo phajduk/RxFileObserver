@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.phajduk.rxfileobserver;
+package com.github.phajduk.rxfileobserver;
 
 import java.io.File;
 

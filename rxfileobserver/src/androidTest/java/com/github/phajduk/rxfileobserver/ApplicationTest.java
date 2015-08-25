@@ -14,10 +14,13 @@
  * limitations under the License.
  */
 
-package net.phajduk.rxfileobserver;
+package com.github.phajduk.rxfileobserver;
 
 import android.os.Environment;
 import android.support.test.runner.AndroidJUnit4;
+
+import com.github.phajduk.rxfileobserver.FileEvent;
+import com.github.phajduk.rxfileobserver.RxFileObserver;
 
 import org.junit.After;
 import org.junit.Before;
