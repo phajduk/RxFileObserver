@@ -6,10 +6,8 @@ Reactive wrapper around Android's [FileObserver][1]
 ## Download
 
 Gradle:
-TBD
-
 ```groovy
-TBD
+compile 'com.github.phajduk:rxfileobserver:0.1.0'
 ```
 
 ## Example
