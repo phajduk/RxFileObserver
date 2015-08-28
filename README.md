@@ -1,9 +1,10 @@
 # RxFileObserver
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RxFileObserver-green.svg?style=flat)](https://android-arsenal.com/details/1/2397)
 
 Reactive wrapper around Android's [FileObserver][1]
 
 ## Download
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.phajduk/rxfileobserver.svg)](http://search.maven.org/#search%7Cga%7C1%7Crxfileobserver)
 
 Gradle:
 ```groovy
